@@ -1,0 +1,26 @@
+git clone "url" pour récupérer
+git commit -m "nom" pour upload 
+git add "chemin d'accée fichier" 
+
+setup git 
+
+git init
+git add .
+git commit -m "name"
+git branch -M main
+git remote add origin "url"
+git push -u origin main
+
+Truc bootstrap a add pour le cv
+
+Collapse | 
+Badge | 
+Card | Lien vers site
+Carousel | Image troll
+Dropdown | 
+Navbar | 
+Offcanvas | 
+Progress | Compétence en qlqc
+Scrollspy | nav bar cv
+Spinner | troll
+toasts | troll
