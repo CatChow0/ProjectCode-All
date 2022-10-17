@@ -1,0 +1,15 @@
+body {
+    background: white;
+}
+
+
+/*Dark Mode switch*/
+.dark-mode {
+    background: black;
+}
+
+section {
+    background-color: rgb(255, 0, 0);
+    height: 20vh;
+}
+

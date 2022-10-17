@@ -110,7 +110,7 @@ p {
     font-weight: bold;
 }
 
-.diplome {
+.diplome:hover {
     background-color: rgb(151, 151, 151);
     border-radius: 10px;
 }
