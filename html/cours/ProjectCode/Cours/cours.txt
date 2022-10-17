@@ -11,3 +11,14 @@ git branch -M main
 git remote add origin "url"
 git push -u origin main
 
+maj du repo 
+
+git clone 'url'
+
+dans les fichier : 
+
+add les fichier récent dans le clone
+
+git add .
+
+git commit -m "name"
