@@ -1548,4 +1548,4 @@ void pause()
     Sleep(1000);
     system("cls");
     system("color 17");
-    }
+}
