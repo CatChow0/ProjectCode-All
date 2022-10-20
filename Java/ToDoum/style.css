@@ -501,6 +501,7 @@ input:checked ~ .bubble::after {
     color: var(--grey);
 }
 
+/* Spikes en haut */
 .spikes {
     position: relative;
     background: #2c3e50;
