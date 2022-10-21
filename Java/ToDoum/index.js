@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
         localStorage.setItem('username', e.target.value);
     })
 
+    // Regarde le contenue de 
     newTodoumForm.addEventListener('submit' ,e => {
         e.preventDefault();
 
