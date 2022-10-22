@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
         localStorage.setItem('username', e.target.value);
     })
 
+    // Regarde le contenue de l'entré text + cate 
     newTodoumForm.addEventListener('submit' ,e => {
         e.preventDefault();
 
@@ -128,6 +129,7 @@ function DisplayTodoums() {
             })
         })
 
+        // Delete le texte
         deletebutton.addEventListener('click', (e)=> {
             todoums = todoums.filter(t => t != todoum);
             localStorage.setItem('toudoums', JSON.stringify(todoums));
@@ -135,4 +137,3 @@ function DisplayTodoums() {
         })
     })
 }
-

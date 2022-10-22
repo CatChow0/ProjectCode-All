@@ -25,27 +25,23 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-
 /* Animated wallpasper */
-
 /* Met au premier plan le contenue */
 #new-todoum-form {
     position: relative;
     z-index: 10;
 }
-
 .toudoum-liste {
     position: relative;
     z-index: 10;
 }
-
+/* Animated Wallpaper */
 .area{
     background: rgb(228, 228, 228);   
     width: 100%;
     height:100vh;
     z-index: 0;
 }
-
 .circles{
     position: absolute;
     top: 0;
@@ -55,7 +51,6 @@
     overflow: hidden;
     z-index: 0;
 }
-
 .circles li{
     position: absolute;
     display: block;
@@ -74,8 +69,6 @@
     height: 80px;
     animation-delay: 0s;
 }
-
-
 .circles li:nth-child(2){
     left: 10%;
     width: 20px;
@@ -83,14 +76,12 @@
     animation-delay: 2s;
     animation-duration: 12s;
 }
-
 .circles li:nth-child(3){
     left: 70%;
     width: 20px;
     height: 20px;
     animation-delay: 4s;
 }
-
 .circles li:nth-child(4){
     left: 40%;
     width: 60px;
@@ -98,28 +89,24 @@
     animation-delay: 0s;
     animation-duration: 18s;
 }
-
 .circles li:nth-child(5){
     left: 65%;
     width: 20px;
     height: 20px;
     animation-delay: 0s;
 }
-
 .circles li:nth-child(6){
     left: 75%;
     width: 110px;
     height: 110px;
     animation-delay: 3s;
 }
-
 .circles li:nth-child(7){
     left: 35%;
     width: 150px;
     height: 150px;
     animation-delay: 7s;
 }
-
 .circles li:nth-child(8){
     left: 50%;
     width: 25px;
@@ -127,7 +114,6 @@
     animation-delay: 15s;
     animation-duration: 45s;
 }
-
 .circles li:nth-child(9){
     left: 20%;
     width: 15px;
@@ -135,7 +121,6 @@
     animation-delay: 2s;
     animation-duration: 35s;
 }
-
 .circles li:nth-child(10){
     left: 85%;
     width: 150px;
@@ -143,8 +128,6 @@
     animation-delay: 0s;
     animation-duration: 11s;
 }
-
-
 @keyframes animate {
 
     0%{
@@ -160,10 +143,7 @@
     }
 
 }
-
 /* Header */
-
-
 h1 {
     text-align: center;
     font-size: 4.5em;
@@ -186,18 +166,15 @@ h1 {
 
 
 }
-
 h1:hover {
     -webkit-animation-play-state: running;
     animation-play-state: running;
 }
-
 @keyframes stripeAnimation {
     100% {
       background-position: 200%;
     }
 }
-
 /* Animation boutton */
 button {
     background: transparent;
@@ -205,20 +182,17 @@ button {
     display: inline-block;
     position: relative;
 }
-
 /* Animation button sup */
 .sup {
     padding: 0;
     border: none;
     background: var(--danger);
 }
-
 .sup:hover {
     color: var(--danger);
     background: transparent;
     box-shadow: none;
 }
-
 .sup:before,
 .sup:after{
     content:'';
@@ -230,14 +204,12 @@ button {
     background: var(--danger);
     transition:400ms ease all;
 }
-
 .sup:after {
     right: inherit;
     top: inherit;
     left:0;
     bottom:0;
 }
-
 .sup:hover:before,
 .sup:hover:after{
     width: 100%;
@@ -372,12 +344,10 @@ input[type="checkbox"] {
     border: 2px solid var(--travail);
     box-shadow: var(--travail-glow);
 }
-
 .bubble.detente {
     border-color: var(--detente);
     box-shadow: var(--detente-glow);
 }
-
 .bubble::after{
     content: "";
     display: block;
@@ -389,18 +359,15 @@ input[type="checkbox"] {
     border-radius: 50%;
     transition: 0.2s ease-in-out;
 }
-
 .bubble.detente::after {
     background-color: var(--detente);
     box-shadow: var(--detente-glow);
 }
-
 input:checked ~ .bubble::after {
     width: 10px;
     height: 10px;
     opacity: 1;
 }
-
 /* Personalisation text categorie */
 .cre-todoum .option label div {
     color: var(--text-color);
@@ -408,7 +375,6 @@ input:checked ~ .bubble::after {
     margin-top: 1rem;
     font-weight: bold;
 }
-
 /* Personalisation du bouton "ajouter toudoum" */
 .cre-todoum input[type="submit"] {
     display: block;
@@ -422,16 +388,13 @@ input:checked ~ .bubble::after {
     cursor: pointer;
     transition: 0.2s ease-in-out;
 }
-
 /* Blanchie le bouton "ajouter toudoum" au passage de la souris */
 .cre-todoum input[type="submit"]:hover {
     opacity: 0.75;
 }
-
 .toudoum-liste .list {
     margin: 1rem 0;
 }
-
 /* Personalise bande des toudoum */
 .toudoum-liste .todoum-objet {
     display: flex;
@@ -442,39 +405,30 @@ input:checked ~ .bubble::after {
     box-shadow: var(--add-todoum);
     margin-bottom: 1.5rem;
 }
-
 .todoum-objet label {
     display: block;
     margin-right: 1rem;
     cursor: pointer;
 }
-
 /* personalisation de la bande de Toudoum */
-
 .todoum-objet.detente {
     box-shadow: var(--toudoum-detente);
 }
-
 .todoum-objet.travail {
     box-shadow: var(--toudoum-travail);
 }
-
-
 .todoum-objet .todoum-content {
     flex: 1 1 0%;
 }
-
 .todoum-objet .todoum-content input {
     color: var(--light);
     font-size: 1.125rem;
     width: 50vw;
 }
-
 .todoum-objet .action {
     display: flex;
     align-items: center;
 }
-
 .todoum-objet .action button {
     display: block;
     padding: 0.5rem;
@@ -483,28 +437,23 @@ input:checked ~ .bubble::after {
     cursor: pointer;
     transition: 0.2 ease-in-out;
 }
-
 .todoum-objet .action button:hover {
     opacity: 0.7;
 }
-
 /* personalisation des boutons */
 .todoum-objet .action .modifier {
     margin-right: 0.5rem;
 }
-
 .todoum-objet.fini .todoum-content input {
     text-decoration: line-through;
     color: var(--grey);
 }
-
 /* Spikes en haut */
 .spikes {
     position: relative;
     background: #2c3e50;
     height: 10vh;
 }
-  
 .spikes::after {
     content: '';
     position: absolute;
@@ -518,25 +467,19 @@ input:checked ~ .bubble::after {
     background-image: linear-gradient(135deg, #2c3e50 25%, transparent 25%), linear-gradient(225deg, #2c3e50 25%, transparent 25%);
     background-position: 0 0;
 }
-
-
 @media screen and (max-width: 640px) {
     h1 {
         font-size: 11vw;
     }
-
     .action {
         flex-direction: column;
     }
-
     .todoum-objet .action .modifier {
         margin-right: 0;
         margin-bottom: 1rem;
     }
 }
-
 @media screen and (max-width: 350px) {
-
     .action {
         position: absolute;
         display: flex;
@@ -544,12 +487,10 @@ input:checked ~ .bubble::after {
         margin-top: 6rem;
         margin-left: 15vw;
     }
-
     .todoum-objet .action .modifier {
         margin-right: 1rem;
         margin-bottom: 0rem;
     }
-
     .toudoum-liste .todoum-objet {
         margin-bottom: 4rem;
     }
