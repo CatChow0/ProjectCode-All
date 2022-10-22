@@ -8,7 +8,6 @@
 #include <dos.h>            //
 #include <ctype.h>          //
 #include <windows.h>        //Pour la fonction | Sleep() |
-
 /* déclaration des fonctions global */
 void jeu();                      //Fonction Jouer
 void pause();                    //Equivalent a system("pause")
@@ -17,10 +16,8 @@ void about();                    //About
 void menu();                     //Main Menu
 void test();                     //Fonction de test
 void aide();                     //Aide
-
 //simplification des noms
 using namespace std;
-
 /* déclaration des variables global */
 int speed;                      //Durée du delay (vitesse du jeu)
 int mainchoice;                 //Choix du Main Menu
@@ -40,7 +37,6 @@ int position_murmouvant[2][20]; //Position du mor mouvant
 int taille_murmouvant;          //Taille mur mouvant
 int nb_briquemouvant;           //Nombres de briques mouvantes
 int position_briquemouvant[2][20];//Position des briques mouvantes
-
 bool debugtype;                 //Type de debug a effectuer
 bool updatebille;               //Met a jour la position de la bille
 bool affichagebonus;            //Affiche le bonus
@@ -57,11 +53,9 @@ bool sensmurmouvant;            //Indique le sens du mur (0=Hor. / 1=Ver.)
 bool initmurmouvant;            //Initialise le mur mouvant
 bool briquemouvantbool;         //Place des briques mouvante sur la map
 bool initbriquemouvant;         //Initialisation des briques mouvantes
-
 char player[25];                //Nom du joueur
 char lastkey;                   //Dernière entrée
 char screen[42][22];            //Ecran du jeu...
-
 //--------------------------------------------------------------
 //----------------------------MAIN------------------------------
 //--------------------------------------------------------------
@@ -108,12 +102,10 @@ int main()
     affichagebonus=0;
     initmurmouvant=1;
     initbriquemouvant=1;
-    
     /* Routine primaire */
     menu();  
     }while(mainchoice!=5);
-  }
-
+}
 //--------------------------------------------------------------
 //----------------------------MENU------------------------------
 //--------------------------------------------------------------
@@ -141,13 +133,11 @@ void menu()
              break;
     case 4 : about();
              break;
-    
     case 5 : break;
     default: cout<<"         \n!!! Veuillez entrer un choix !!!\n";
              break;
     }
-  }
-
+}
 //--------------------------------------------------------------
 //--------------------------OPTIONS-----------------------------
 //--------------------------------------------------------------
@@ -157,7 +147,6 @@ void options()
   int temp;
   int choice;
   bool reask=0;
-  
   /* Boucle principal */      
   do
     {
@@ -332,15 +321,13 @@ void options()
       }
     }while(choice!=6);
   system("cls");
-  }
-
+}
 //--------------------------------------------------------------
 //----------------------------AIDE------------------------------
 //--------------------------------------------------------------
 void aide()
   {
-  /* Affichage des consignes */
-     
+  /* Affichage des consignes */ 
   system("cls");
   cout<<"-------------------------------------------------------\n";
   cout<<"-------------------------Aide--------------------------\n";
@@ -367,7 +354,7 @@ void aide()
   cout<<"-------------------------------------------------------\n";
   pause();
   system("cls");
-  }
+}
 //--------------------------------------------------------------
 //---------------------------ABOUT------------------------------
 //--------------------------------------------------------------
@@ -396,7 +383,6 @@ void about()
   Sleep(5000);
   system("cls");
   }
-  
 //--------------------------------------------------------------
 //----------------------------JEU-------------------------------
 //--------------------------------------------------------------
@@ -415,8 +401,7 @@ void jeu()
   void debug();                       //Fonction de debug
   void bonus();                       //Fonction pour le bonus
   void murmouvant();                  //Fonction pour le mur mouvant
-  void briquemouvant();               //fonction pour briques mouvantes
-                                          
+  void briquemouvant();               //fonction pour briques mouvantes                                    
   /* Routine du jeu */
   system("cls");
   system("color 17");
@@ -432,7 +417,6 @@ void jeu()
     system("color 17");
     }
   jeu_countdown();                    //Compte-à-rebours
-  
   while(gameover==0 && gameexit==0) //Boucle d'affiche et saisie
     {
     if(help==1)                       //Vérification si demande d'aide
@@ -442,7 +426,6 @@ void jeu()
       debugtype=0;                      //Signifie que c'est avant les modifs
       debug();                          //Lancement de debug si nécaissaire
       }
-      
     bille();                          //Positionnement de la bille
     if(bonusbool==1)
       bonus();                          //Positionnement du bonus
@@ -450,26 +433,21 @@ void jeu()
       murmouvant();                     //Positionnement des murs mouvants
     if(briquemouvantbool==1)
       briquemouvant();                  //Positionnement des briques mouvantes
-      
     serpent();                        //Positionnement du serpent
-
     if(debugmode==1)                  //Vérification si demande Debug
       {
       debugtype=1;                      //Signifie que c'est après les modifs
       debug();                          //Lancement de debug si nécaissaire
       }
     affichage();                      //Affichage de screen
-
     if(debugmode==1)                //Vérification si demande Debug
       oldreadkey();                   //Lecture et delay pour debug mode
     else
       readkey();                        //Lit les touches et delay
-
     check();                          //Modification suite au touches enfoncée
                             //Calcul le score actuelle
     score=((nb_boule_mangee*speed)+(nb_bonus_mangee*50));  
     }
-  
   Sleep(1500);
   if(debugmode==1)                    //Vérification si demande Debug
     {
@@ -480,8 +458,7 @@ void jeu()
   resultat();                         //Affichage du score du player   
   system("color 07");
   system("cls");
-  }
-
+}
 //--------------------------------------------------------------
 //--------------------------FAUSE-------------------------------
 //--------------------------------------------------------------
@@ -491,8 +468,7 @@ void pause()
   /* Mais evite l'emplois du Shell DOS */
   cout<<"Presser une touche pour continuer.\n";
   getch();
-  }
-
+}
 //--------------------------------------------------------------
 //---------------------FONCTION POUR JEU------------------------
 //--------------------------------------------------------------
@@ -541,7 +517,7 @@ void pause()
     cout<<"                            -----      ------  \n";
     Sleep(1000);
     system("cls");
-    }
+}
  
   //--Bonus-----------------------------------------------------  
   void bonus()
@@ -550,7 +526,6 @@ void pause()
     void affichage();
     /* Déclarations des variables locals */
     int aleat=0;
-
     /* Clignotement si bonus mangé */
     if((timebonus>0) && (affichagebonus==0))
       {
@@ -580,7 +555,6 @@ void pause()
       {
       /* Random pour mettre le bonus ou pas */
       aleat=rand()%50;
-    
       /* Positionnement du bonus si nécaissaire */
       if(aleat==25)
         {
@@ -596,15 +570,12 @@ void pause()
         while(screen[(position_bonus[0][0]+1)][(position_bonus[1][0]+1)]!=' ');
         }
       }
-    
     }
-    
   //--Bille-----------------------------------------------------  
   void bille()
     {
     /* Déclaration de fonction local */
     void affichage();
-      
     /* Au début du jeu */
     if(updatebille==1)
       {
@@ -616,7 +587,6 @@ void pause()
       system("cls");
       system("color 17");
       affichage();
-      
       do
         {      
         /* Position sur axe X */
@@ -636,16 +606,13 @@ void pause()
     lastkey=getch();
     Sleep(100);
     }
-    
   //--ReadKey---------------------------------------------------
   void readkey()  
     {
     /* Déclaration des variables local */
     int count;
-    
     /* Initialisation des variables */
     count=0;
-    
     /* Boucle de saisie et de delay */
     while(count<=(110-(speed*10)))
       {
@@ -655,7 +622,6 @@ void pause()
         lastkey=toupper(getch());    // Alors enregistrer la saisie
       }
     }
-    
   //--Mur mouvant-----------------------------------------------
   void murmouvant()
     {
@@ -666,10 +632,8 @@ void pause()
     int aleatupdate;      //Valeur pour modifier la position du mur
     int i;                //Pour boucle
     bool impossible;      //Valeur si position déjà prise
- 
     /* Randomization pour update */
     aleatupdate=rand()%50;
-    
     /* positionnement du mur mouvant */
     if(aleatupdate==25  || initmurmouvant==1)
       {
@@ -679,7 +643,6 @@ void pause()
         /* Randomization */       
         aleatsens=rand()%2;
         impossible=0;
-        
         //Donne une position au mur mouvant
         switch(aleatsens)
           {
@@ -706,7 +669,6 @@ void pause()
                      }
                    break;
           }
-               
         /* Check si position déjà utillisée */
         for(i=0 ; i<=taille_murmouvant ; i++)
           {
@@ -718,7 +680,6 @@ void pause()
       sensmurmouvant=aleatsens;
       }
     }
-
   //--Brique mouvant-----------------------------------------------
   void briquemouvant()
     {
@@ -728,10 +689,8 @@ void pause()
     int aleatupdate;      //Valeur pour modifier la position du mur
     int i;                //Pour boucle
     bool impossible;      //Valeur si position déjà prise
- 
     /* Randomization pour update */
     aleatupdate=rand()%50;
-    
     /* positionnement des briques mouvantes */
     if(aleatupdate==25  || initbriquemouvant==1)
       {
@@ -748,8 +707,7 @@ void pause()
           /* Axe Y */
           aleaty=rand()%20;
           position_briquemouvant[1][i]=(aleaty+1);
-          }
-               
+          }    
         /* Check si position déjà utillisée */
         for(i=0 ; i<=nb_briquemouvant ; i++)
           {
@@ -760,13 +718,11 @@ void pause()
       while(impossible==0);
       }
     }
-
   //--Serpent---------------------------------------------------
   void serpent()
     {
     /* Déclaration variables local */
     int i, y;
-
     /* Initialisation du serpent (au debut de jeu) */
     if(initserpent==1)
       {
@@ -776,7 +732,6 @@ void pause()
       position_serpent[0][0]=20;
       /* position tête serpent sur axe Y */
       position_serpent[1][0]=10;
-      
       for(i=1 ; i<=taille_serpent ; i++)
         {
         /* position corps serpent sur axe X */
@@ -786,7 +741,6 @@ void pause()
         }
       initserpent=0;
       }
-    
     /* Si c'est la première execution il va direct au else */    
     if(initserpent==0)
       {  
@@ -1013,17 +967,14 @@ void pause()
         }
     else
       initserpent=0;
-      
     /* Met a jour l'ancienne position */
     last_direction=direction;
-    
     /* Vérification si le serpent peux traverser les murs */
     if(traversermur==1)
       {
       /* Vérification si la tête du serpent change de coté */
       if((position_serpent[0][0]>39 || position_serpent[0][0]<0) || (position_serpent[1][0]>19 || position_serpent[1][0]<0))
         {
-        
         /* l'opposé pour Axe X >39 */
         if(position_serpent[0][0]>=39)
           {
@@ -1032,7 +983,6 @@ void pause()
           /* Axe Y */
           position_serpent[1][0]=position_serpent[1][1];
           }
-          
         /* l'opposé pour Axe X <0 */  
         if(position_serpent[0][0]<0)
           {
@@ -1041,7 +991,6 @@ void pause()
           /* Axe Y */
           position_serpent[1][0]=position_serpent[1][1];
           }
-        
         /* l'opposé pour Axe Y >19 */
         if(position_serpent[1][0]>19)
           {
@@ -1050,7 +999,6 @@ void pause()
           /* Axe Y */
           position_serpent[1][0]=0;
           }
-          
         /* l'opposé pour Axe Y <0 */
         if(position_serpent[1][0]<0)
           {
@@ -1062,15 +1010,12 @@ void pause()
         }
       }
     }
-    
   //--Check-----------------------------------------------------    
   void check()
     {
     // Met a jour les actions effetuer en fonction des touches enfoncées
-    
     /* Déclaration des varaibles */
     int i, y;
-    
     /* Check demande pour quitter */
     if(lastkey=='q' || lastkey=='Q')
       gameexit=1;
@@ -1088,7 +1033,6 @@ void pause()
       cout<<"VOUS ETES EN PAUSE !!!"<<endl<<endl;;
       pause();
       }
-      
     /* Check Left - Gauche */
     if(lastkey=='4' || lastkey=='K')
       direction=4; 
@@ -1101,8 +1045,6 @@ void pause()
     /* Check Top - Haut */
     if(lastkey=='8' || lastkey=='H')
       direction=8;
- 
-    
     /* Check si le serpent a manger la bille */
     /* Position sur axe X */
     if(position_serpent[0][0]==position_bille[0][0])
@@ -1115,7 +1057,6 @@ void pause()
         taille_serpent++;         //Augmente le taille su serpent
         }
       }
-    
     /* Check si le serpent a manger le bonus */
     /* Position sur axe X */
     if(position_serpent[0][0]==position_bonus[0][0])
@@ -1127,8 +1068,6 @@ void pause()
         affichagebonus=0;
         }
       }
-          
-     
     /* Check si le serpent touche le mur */
     if(traversermur==0)
       {
@@ -1142,7 +1081,6 @@ void pause()
           gameover=1;
         }
       }
-      
     /* Check si serpent touche le mur central */
     if(murcentral==1)
       {
@@ -1152,7 +1090,6 @@ void pause()
           gameover=1;
         }
       }
-
     /* Check si serpent touche le mur mouvant */
     if(murmouvantbool==1)
       {
@@ -1165,7 +1102,6 @@ void pause()
           }
         }
       }
-    
     /* Check si serpent touche les briques mouvantes */
     if(briquemouvantbool==1)
       {
@@ -1177,8 +1113,7 @@ void pause()
             gameover=1;
           }
         }
-      }  
-      
+      }
     /* Check si le serpent c'est mangé la queue */
     for(i=0 ; i<taille_serpent ; i++)
       {
@@ -1194,7 +1129,6 @@ void pause()
         }
       }
     }
-    
   //--Affichage-------------------------------------------------    
   void affichage()
     {
@@ -1202,9 +1136,7 @@ void pause()
     int i, y;        //Pour compteur
     int ascii;       //Charactère spécial en ASCII
     char brique;     //Characatère spécial pour mur
-
     nb_refresh++;
-    
     /* Remplissage de "screen" */
       /* Vidange de l'écran */
       for(i=0 ; i<42 ; i++)
@@ -1223,7 +1155,6 @@ void pause()
           screen[i][0]=brique;            //Haut        ASCII: 205
           screen[i][21]=brique;           //Bas         ASCII: 205
           }
-          
         /* Positionnement des murs gauche droite */
         ascii=186;
         brique=ascii;
@@ -1232,24 +1163,19 @@ void pause()
           screen[0][i]=brique;               //Gauche       ASCII: 186
           screen[41][i]=brique;              //Droite       ASCII: 186
           }
-          
         /*Positionnement des angles des murs*/
         ascii=201;
         brique=ascii;
         screen[0][0]=brique;                 //Haut-Gauche  ASCII: 201
-
         ascii=187;
         brique=ascii;
         screen[41][0]=brique;                //Haut-Droite  ASCII: 200
-
         ascii=200;
         brique=ascii;
         screen[0][21]=brique;                //Bas-Gauche   ASCII: 187
-
         ascii=188;
         brique=ascii;
         screen[41][21]=brique;               //Bas-Droite   ASCII: 188
-        
       /* positionnement du mur central */
       if(murcentral==1)
         {
@@ -1258,7 +1184,6 @@ void pause()
          for(i=0 ; i<20 ; i++)
            screen[(i+1+10)][10]=brique;
         }
-        
       /* positionnement du mur mouvant */
       if(murmouvantbool==1)
         {
@@ -1266,12 +1191,10 @@ void pause()
           ascii=205;
         if(sensmurmouvant==1)
           ascii=186;
-          
         brique=ascii;
         for(i=0 ; i<taille_murmouvant ; i++)
           screen[(position_murmouvant[0][i]+1)][(position_murmouvant[1][i]+1)]=brique;
         }
-      
       /* positionnement des briques mouvantes */
       if(briquemouvantbool==1)
         {
@@ -1280,10 +1203,8 @@ void pause()
         for(i=0 ; i<nb_briquemouvant ; i++)
           screen[(position_briquemouvant[0][i]+1)][(position_briquemouvant[1][i]+1)]=brique;
         }
-
       /* positionnement de la bille */
       screen[(position_bille[0][0]+1)][(position_bille[1][0]+1)]='O';
-      
       /* positionnement du bonus */
       if(affichagebonus==1)
         {
@@ -1294,15 +1215,12 @@ void pause()
         {
         screen[(position_serpent[0][i]+1)][(position_serpent[1][i]+1)]='+';
         }
-
-    
     /* Affichage de "screen" */
     system("cls");
     for(i=0 ; i<22 ; i++)
       {
       for(y=0 ; y<42 ; y++)
         cout<<screen[y][i];
-      
       /* Affichage du score a gauche */
       if(i==10)
          cout<<"         ------ ";
@@ -1322,7 +1240,6 @@ void pause()
       cout<<endl;
       }
     }
-
   //--Resultat--------------------------------------------------    
   void resultat()
     {
@@ -1341,7 +1258,6 @@ void pause()
       cout<<"\n\n\n\n";
       pause();
       }
-  
     /*Routine d'affichage si le player quitte */
     if(gameexit==1)
       {
@@ -1356,14 +1272,12 @@ void pause()
       pause();
       }
     }
-    
   //--Game Over-------------------------------------------------
   void over()
     {
     /* Déclaration des variables local */
     bool colorsw;                //Lors fu flash du game over
     int i;                       //Pour compteur
-
     /* Affichage de game over avec ralentissement */
     system("cls");
     system("color 1C");
@@ -1400,7 +1314,6 @@ void pause()
     Sleep(100);
     cout<<" ----------------------------------------------------- \n";
     Sleep(1000);
-    
     /* Clignotement de game over */
     colorsw=0;
     for(i=0 ; i<10 ; i++)
@@ -1451,7 +1364,6 @@ void pause()
     {
     /* Déclaration des varaibles local */
     int i;            //Pour compteur
-    
     /* Routine de debuggage */
     system("cls");
     system("color 1E");
@@ -1473,17 +1385,14 @@ void pause()
               cout<<"((((((( Apres avoir quitter le boucle du jeu\n\n\n";
               break;      
       }
-    
     cout<<"---Informations sur la bille\n";
     cout<<"Position bille X: "<<position_bille[0][0]<<endl;
     cout<<"               Y: "<<position_bille[1][0]<<endl;
     cout<<"Nombre de bille mangee: "<<nb_boule_mangee<<endl<<endl;
-
     cout<<"---Informations sur le bonus\n";
     cout<<"Position bonus X: "<<position_bonus[0][0]<<endl;
     cout<<"               Y: "<<position_bonus[1][0]<<endl;
     cout<<"Nombre de bonus mangee: "<<nb_bonus_mangee<<endl<<endl;
-
     cout<<"---Informations sur le mur mouvant\n";
         cout<<"Position mur mouvant X: ";
     for(i=0 ; i<taille_murmouvant ; i++)
@@ -1496,7 +1405,6 @@ void pause()
     cout<<"Taille mur mouvant: "<<taille_murmouvant<<endl;
     cout<<"Sens du mur mouvant: "<<sensmurmouvant<<endl;
     cout<<"Initialisation du mur mouvant: "<<initmurmouvant<<endl<<endl;
-
     cout<<"---Informations sur les briques mouvantes\n";
         cout<<"Position briques mouvantes X: ";
     for(i=0 ; i<nb_briquemouvant ; i++)
@@ -1508,7 +1416,6 @@ void pause()
     cout<<endl;
     cout<<"Nombre de briques mouvantes: "<<nb_briquemouvant<<endl;
     cout<<"Initialisation des briques mouvant: "<<initbriquemouvant<<endl<<endl;
-
     cout<<"---Informations sur le serpent\n";
     cout<<"Longueur Serpent: "<<taille_serpent<<endl;
         cout<<"Position serpent X: ";
@@ -1522,7 +1429,6 @@ void pause()
     cout<<"Direction: "<<direction<<endl;
     cout<<"Last Direction: "<<last_direction<<endl;
     cout<<endl<<endl;
-    
     cout<<"---Informations sur les \"bool\"\n";
     cout<<"Valeur de \"gameexit\"       : "<<gameexit<<endl;
     cout<<"Valeur de \"gameover\"       : "<<gameover<<endl;
@@ -1535,13 +1441,11 @@ void pause()
     cout<<"Valeur de \"murcentral\"     : "<<murcentral<<endl;
     cout<<"Valeur de \"murmouvantbool\" : "<<murmouvantbool<<endl;
     cout<<"Valeur de \"briquemouvantbool: "<<briquemouvantbool<<endl<<endl;
-   
     cout<<"---Informations sur diverses\n";
     cout<<"Dernière touche entree: "<<lastkey<<endl;
     cout<<"Nombres de refresh de l\'ecran: "<<nb_refresh<<endl;
     cout<<"Score actuelle: "<<score<<endl;
     cout<<"Timer bonus: "<<timebonus<<endl<<endl;
-    
     cout<<endl<<endl;
     pause();
     cout<<endl<<"REPRISE DU JEU NOW...";

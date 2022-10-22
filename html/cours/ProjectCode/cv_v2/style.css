@@ -392,7 +392,6 @@ h1.active {
     height: 3rem;
     background-color: var(--pac);
     border-radius: 100px;
-    
 }
 .pacman .eye {
     position: relative;

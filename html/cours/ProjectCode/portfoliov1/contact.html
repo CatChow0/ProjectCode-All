@@ -7,9 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-
     <body>
-
         <nav class="navbar">
             <a><img src="asset/Logo2.png" class="logo" alt="Logo"></a>
             <div class="nav-links">
@@ -21,15 +19,10 @@
             </div>
             <img src="asset/hamburger.png" alt="menu hamburger" class="menu">
         </nav>
-
         <header></header>
-
         <div class="contacttxt">
             <h1 id="contacttxt">Retrouvez moi ici</h1>
         </div>
-
-
-
         <div class="contact">
             <ul>
                 <li id="mail"><a id="mailtxt">anthonyrvspro@gmail.com</a><img src="asset/Mail.png" id="mailpng"></li>
@@ -37,25 +30,17 @@
                 <li id="insta"><a id="instatxt">@cat__chow</a><img src="asset/Instagram.png" id="instapng"></li>
             </ul>
         </div>
-
-
-
         <div class="linkcontact">
             <ul>
                 <li id="linkmail"><a href="https://mail.google.com/mail" target="_blank"><h3>.</h3></a></li>
                 <li id="linklinkdin"><a href="https://www.linkedin.com/in/anthony-rivas-3841a7253" target="_blank"><h3>.</h3></a></li>
                 <li id="linkinsta"><a href="https://www.instagram.com/cat__chow/?igshid=YmMyMTA2M2Y%3D" target="_blank"><h3>.</h3></a></li>
         </div>
-
-
-
     </body>
-
     <script>
         const menuHamburger = document.querySelector(".menu")
         const navLinks = document.querySelector(".nav-links")
         const contacttxt = document.querySelector(".contacttxt")
- 
         menuHamburger.addEventListener('click',()=>{
         navLinks.classList.toggle('mobile-menu'), contacttxt.classList.toggle('mobile-menu')
         })

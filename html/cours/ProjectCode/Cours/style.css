@@ -4,30 +4,25 @@
     text-decoration: none;
     list-style: none;
 }
-
 /*Bande top*/
 header{
     background-color: #ff5757;
     height: 10vh;
 }
-
 /*Bande bottom*/
 footer {
     background-color: #ff5757;
     height: 5vh;
 }
-
 body {
     background-color: white;
 }
-
 /*Bande gauche*/
 .leftline {
     background-color: #febd59;
     width: 20vw;
     height: 100vh;
 }
-
 .leftline #pfpsize {
     position: relative;
     width: 45%;

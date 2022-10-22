@@ -17,7 +17,6 @@
     --toudoum-travail: 0px 0px 30px rgba(58, 130, 238, 0.85);
     --add-todoum: 0px 0px 40px rgba(0, 0, 0, 0.75);
 }
-
 /* Parametre de base */
 *{
     margin: 0;
@@ -60,9 +59,7 @@
     background: rgba(52, 52, 52, 0.2);
     animation: animate 25s linear infinite;
     bottom: -150px;
-    
 }
-
 .circles li:nth-child(1){
     left: 25%;
     width: 80px;
@@ -129,19 +126,16 @@
     animation-duration: 11s;
 }
 @keyframes animate {
-
     0%{
         transform: translateY(0) rotate(0deg);
         opacity: 1;
         border-radius: 0;
     }
-
     100%{
         transform: translateY(-1000px) rotate(720deg);
         opacity: 0;
         border-radius: 50%;
     }
-
 }
 /* Header */
 h1 {
@@ -150,7 +144,6 @@ h1 {
     font-weight: inherit;
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-decoration: double;
-
     position: relative;
     color: transparent;
     background-image: repeating-linear-gradient(45deg, #f1f1f1 0px, #f1f1f1 144px, gray 144px, gray 288px, #bebebe 288px, #bebebe 432px);
@@ -163,8 +156,6 @@ h1 {
     animation-play-state: running;
     -webkit-animation-play-state: paused;
     animation-play-state: paused;
-
-
 }
 h1:hover {
     -webkit-animation-play-state: running;
