@@ -16,6 +16,9 @@
     --text-glow-danger: 0px 0px 8px rgb(255, 94, 94);
 
 
+
+    
+
 }
 *{
     margin: 0;
@@ -235,7 +238,6 @@ section {
     box-shadow: var(--xxl-glow-light);
     text-shadow: var(--text-glow-light);
 }
-
 .competence {
     background-color: transparent;
 }
@@ -251,12 +253,10 @@ section {
     padding: 1.5rem;
     box-shadow: var(--xxl-glow-base);
 }
-
 .competence .base label {
     border-radius: 1rem;
     background-color: var(--dark);
 }
-
 .custom-btn {
     width: 130px;
     height: 40px;
