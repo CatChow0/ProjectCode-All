@@ -364,13 +364,14 @@ h1.active {
     text-align: center;
     margin-top: 15rem;
     font-size: 2rem;
+    cursor: pointer;
 }
 .start span {
     position: relative;
     display: inline-block;
     text-shadow: var(--text-glow-light);
     animation: flip 2s infinite;
-    animation-delay: calc(.2s * var(--i))
+    animation-delay: calc(.2s * var(--i));
 }
 @keyframes flip {
     0%,80% {
