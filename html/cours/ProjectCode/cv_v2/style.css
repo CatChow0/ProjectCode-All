@@ -7,6 +7,7 @@
     --base: #2c3e50;
     --danger: rgb(255, 94, 94);
     --black: rgb(0, 0, 0);
+    --red: rgb(255,0,0);
     --glow-base: 0px 0px 30px rgba(44, 62, 80, 0.75);
     --xxl-glow-base: 0px 0px 40px rgba(44, 62, 80, 1);
     --glow-dark: 0px 0px 30px rgba(49, 49, 84, 0.75);
@@ -15,6 +16,7 @@
     --xxl-glow-light: 0px 0px 40px rgba(238, 238, 238, 0.75);
     --text-glow-light: 0px 0px 8px rgb(255, 255, 255);
     --text-glow-danger: 0px 0px 8px rgb(255, 94, 94);
+    --text-glow-red: 0px 0px 5px rgb(255,0,0);
     --pac: rgb(255, 253, 126);
 
 
@@ -262,7 +264,7 @@ section {
     width: 130px;
     height: 40px;
     color: #fff;
-    border-radius: 1rem;
+    border-radius: 5px;
     padding: 10px 25px;
     font-weight: bold;
     text-shadow: var(--text-glow-light);
@@ -272,40 +274,27 @@ section {
     position: relative;
     display: inline-block;
 }
+         
 .btn-pimp {
-    padding: 0;
-    border: none;
-    background: var(--grey);
+  background-image: linear-gradient(to right, #1F1C2C 0%, #928DAB  51%, #1F1C2C  100%);
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .btn-pimp:hover {
-    color: var(--grey);
-    background: transparent;
-    box-shadow: none;
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
 }
-.btn-pimp:before,
-.btn-pimp:after{
-    content:'';
-    position: absolute;
-    top:0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    background: var(--grey);
-    transition:400ms ease all;
-}
-.btn-pimp:after {
-    right: inherit;
-    top: inherit;
-    left:0;
-    bottom:0;
-}
-.btn-pimp:hover:before,
-.btn-pimp:hover:after{
-    width: 100%;
-    transition: 800ms ease all;
-}
+
 .progra div {
-    text-align: center;
+    justify-content: center;
     margin-top: 1rem;
 }
 /* Pop-up show case */
@@ -387,18 +376,53 @@ h1.active {
 .pre.phase2 {
     display: block;
 }
+/* Pacman */
 .pacman {
     width: 3rem;
     height: 3rem;
     background-color: var(--pac);
     border-radius: 100px;
 }
-.pacman .eye {
-    position: relative;
-    width: 0.4rem;
-    height: 0.4rem;
-    background-color: black;
-    border-radius: 100px;
-    left: 12px;
-    top: 0.8rem;
+/* Button jap + en */
+.lang div {
+    justify-content: center;
+    margin-top: 1rem;
+}     
+.btn-pimp2 {
+  background-image: linear-gradient(to right, #403B4A 0%, #E7E9BB  51%, #403B4A  100%);
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.btn-pimp2:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+/* Langinfo */
+.langinfo {
+    position: absolute;
+    background: black;
+    width: 100vw;
+    z-index: 15;
+    margin: 0;
+    height: 100vh;
+    top: 0;
+    border-radius: 0;
+    display: none;
+}
+.langinfo.tada {
+    display: block;
+}
+.scroll-d {
+    text-align: center;
+    margin-top: 1rem;
+    text-shadow: var(--text-glow-red);
+    color: var(--red);
+    font-size: xx-large;
 }
