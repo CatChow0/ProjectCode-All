@@ -239,7 +239,6 @@ section {
     border-radius: 1rem;
     padding-right: 2rem;
     box-shadow: var(--xxl-glow-light);
-    text-shadow: var(--text-glow-light);
 }
 .competence {
     background-color: transparent;
@@ -289,7 +288,7 @@ section {
 }
 .btn-pimp:hover {
   background-position: right center; /* change the direction of the change here */
-  color: #fff;
+  color: rgb(255, 255, 255);
   text-decoration: none;
 }
 
@@ -392,7 +391,7 @@ h1.active {
   background-image: linear-gradient(to right, #403B4A 0%, #E7E9BB  51%, #403B4A  100%);
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;            
+  color: black;            
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
   display: block;
@@ -401,7 +400,7 @@ h1.active {
 }
 .btn-pimp2:hover {
   background-position: right center; /* change the direction of the change here */
-  color: #fff;
+  color: #000;
   text-decoration: none;
 }
 /* Langinfo */
@@ -425,4 +424,49 @@ h1.active {
     text-shadow: var(--text-glow-red);
     color: var(--red);
     font-size: xx-large;
+}
+/* Section contact */
+.contact{
+    margin-left: -100vw;
+    margin-bottom: 0px;
+    width: 100vw;
+    height: 16.8rem;
+    border-radius: 0;
+    z-index: 15; 
+    transition: all 0.5s ease;
+}
+.contact.on {
+    margin-left: 0;
+}
+/* Band contact*/
+.contact .contband {
+    background-color: var(--grey);
+    width: fit-content;
+    padding-right: 0.75rem;
+    border-radius: 0 0 1rem 1rem;
+}
+.contact .contband h2.Contquest{
+    margin-top: 10px;
+    font-size: xx-large;
+    margin-left: 1rem;
+}
+.off {
+    position: absolute;
+    width: fit-content;
+    left: 0;
+    background-color: var(--grey);
+    padding-left: 0rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 0 1rem 1rem 0;
+    transition: all 0.25s ease;
+}
+.off.on {
+    position: absolute;
+    right: 0;
+    left: auto;
+    border-radius: 1rem 0 0 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0rem;
 }

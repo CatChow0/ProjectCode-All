@@ -13,15 +13,29 @@ function show() {
     neonname.classList.toggle("active");
 
     start.classList.remove("phase2");
-    pac.classList.remove("phase2")
+    pac.classList.remove("phase2");
 
 }
 
 function start() {
     var start = document.getElementById("starting");
-    var pac = document.getElementById("pac")
+    var pac = document.getElementById("pac");
 
-    start.classList.add("phase2")
-    pac.classList.add("phase2")
+    start.classList.add("phase2");
+    pac.classList.add("phase2");
 }
 
+function contactoff() {
+    var contshow = document.getElementById("contoff");
+
+    contshow.classList.toggle("on");
+    setTimeout(hideoff, 700);
+
+}
+
+function hideoff() {
+    var butoff = document.getElementById("off");
+
+    
+    
+}
