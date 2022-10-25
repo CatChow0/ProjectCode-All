@@ -29,13 +29,18 @@ function contactoff() {
     var contshow = document.getElementById("contoff");
 
     contshow.classList.toggle("on");
-    setTimeout(hideoff, 700);
+    
+    setTimeout(hideoff, 200);
 
 }
 
 function hideoff() {
     var butoff = document.getElementById("off");
 
-    
-    
+    if  (butoff.classList.contains("on")) {
+        butoff.classList.remove("on");
+    } else {
+        butoff.classList.add("on");
+    }
+
 }
