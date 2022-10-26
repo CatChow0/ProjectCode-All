@@ -12,6 +12,7 @@
     --xxl-glow-base: 0px 0px 40px rgba(44, 62, 80, 1);
     --glow-dark: 0px 0px 30px rgba(49, 49, 84, 0.75);
     --glow-light: 0px 0px 30px rgba(238, 238, 238, 0.75);
+    --glow-red: 0px 0px 30px rgba(255, 0, 0, 0.75);
     --xxl-glow-dark: 0px 0px 40px rgba(49, 49, 84, 0.75);
     --xxl-glow-light: 0px 0px 40px rgba(238, 238, 238, 0.75);
     --text-glow-light: 0px 0px 8px rgb(255, 255, 255);
@@ -463,6 +464,13 @@ h1.active {
     padding-right: 0.5rem;
     border-radius: 0 1rem 1rem 0;
     transition: all 0.25s ease;
+    cursor: pointer;
+}
+.off:hover{
+    padding-left: 5rem;
+}
+.off.on:hover{
+    padding-right: 5rem;
 }
 .off.on {
     position: absolute;
@@ -471,6 +479,24 @@ h1.active {
     border-radius: 1rem 0 0 1rem;
     padding-left: 0.5rem;
     padding-right: 0rem;
+}
+.onleft{
+    display: block;
+}
+.onleft.onright{
+    display: none;
+}
+.onright {
+    display: block;
+}
+.onright.onleft{
+    display: none;
+}
+#onleft{
+    font-size:2rem;
+}
+#onright{
+    font-size:2rem;
 }
 .btn-cont h2{
     font-size: 6rem;
@@ -482,4 +508,64 @@ h1.active {
     margin-right: auto;
     margin-top: 2rem;
     border-radius: 100px;
+}
+.infopush input {
+    background: none;
+    color: var(--light);
+    border: none;
+    font-size: 1.5rem;
+}
+.infopush .prenom {
+    background: var(--dark);
+    width: fit-content;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    box-shadow: var(--glow-light);
+}
+.infopush .nom {
+    background: var(--dark);
+    width: fit-content;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    box-shadow: var(--glow-light);
+}
+.infopush .email {
+    background: var(--dark);
+    width: fit-content;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    box-shadow: var(--glow-light);
+}
+.infopush .tel {
+    background: var(--dark);
+    width: fit-content;
+    border-radius: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5rem;
+    box-shadow: var(--glow-light);
+}
+.submit{
+    background-color: var(--red);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    width: fit-content;
+    box-shadow: var(--glow-red);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -5rem;
+}
+.nameinfo {
+    display: flex;
+    margin-top: 2rem;
+}
+.sendinfo {
+    display: flex;
+    margin-top: 2rem;
 }

@@ -98,20 +98,40 @@
 
                 </section>
                 <!-- Contact -->
-                <section id="contoff" class="contact on">
+                <section id="contoff" class="contact">
                     <div class="contband">
                         <h2 class="Contquest">Une Question ?</h2>
                     </div>
-                    <div id="off" class="off on">
-                        <h2 onclick="contactoff()">>><br>>></h2>
+                    <div id="off" class="off" onclick="contactoff()">
+                        <h2 id="onleft" class="onleft">»<br>»</h2>
+                        <h2 id="onright" class="onright onleft">«<br>«</h2>
                     </div>
-
-                    <form method="post" action="" class="Infotopush">
-                        <input type="text" name="Prenom" />
-                        <input type="text" name="Nom" />
-                        <input type="email" name="Email" />
-                        <input type="tel" name="Téléphone" />
-                        <input type="submit" value="Envoyer" />
+                    
+                    <form method="POST" action="" class="Infotopush">
+                        <div class="infopush">
+                            <div class="nameinfo">
+                                <div class="prenom">
+                                    <input type="text" name="prenom" placeholder="prenom"/>
+                                </div>
+                                <div class="nom">
+                                    <input type="text" name="nom" placeholder="nom"/>
+                                </div>
+                            </div>
+                            <div class="sendinfo">
+                                <div class="email">
+                                    <input type="email" name="email" placeholder="email"/>
+                                </div>
+                                <div class="tel">
+                                    <input type="tel" name="tel" placeholder="tel"/>
+                                </div>
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Envoyer" />
+                            </div>
+                           
+                            
+                            
+                        </div>
                     </form>
 
                     
