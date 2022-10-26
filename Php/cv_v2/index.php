@@ -106,6 +106,14 @@
                         <h2 id="onleft" class="onleft">»<br>»</h2>
                         <h2 id="onright" class="onright onleft">«<br>«</h2>
                     </div>
+
+                    <?php  
+                    //Conexion a la data base
+                    $pdo = new PDO('mysql:host=localhost;dbname=catchowcontact', 'root', 'root', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+                    if ($_POST) {
+                        $pdo->exec("INSERT INTO contact (prenom, nom, email, tel) VALUES ('$_POST[prenom]', '$_POST[nom]', '$_POST[email]', '$_POST[tel]')");
+                    }
+                    ?>
                     
                     <form method="POST" action="" class="Infotopush">
                         <div class="infopush">
