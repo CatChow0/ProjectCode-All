@@ -100,7 +100,7 @@
                 <!-- Contact -->
                 <section id="contoff" class="contact">
                     <div class="contband">
-                        <h2 class="Contquest">Une Question ?</h2>
+                        <h2 class="Contquest">Une Question ? <span><a href="admin.php">.</a></span></h2>
                     </div>
                     <div id="off" class="off" onclick="contactoff()">
                         <h2 id="onleft" class="onleft">»<br>»</h2>
@@ -115,6 +115,7 @@
                     }
                     ?>
                     
+                    <!-- Formulaire de contact -->
                     <form method="POST" action="" class="Infotopush">
                         <div class="infopush">
                             <div class="nameinfo">

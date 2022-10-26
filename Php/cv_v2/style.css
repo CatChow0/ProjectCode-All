@@ -38,7 +38,7 @@
 }
 /* Animated Wallpaper */
 .area{
-    background: rgb(228, 228, 228);   
+    background: rgb(228, 228, 228,);   
     width: 100%;
     height:100vh;
     z-index: 0;
@@ -452,6 +452,7 @@ h1.active {
     font-size: xx-large;
     margin-left: 1rem;
 }
+/* Button fleche + animation */
 .off {
     position: absolute;
     width: fit-content;
@@ -498,17 +499,7 @@ h1.active {
 #onright{
     font-size:2rem;
 }
-.btn-cont h2{
-    font-size: 6rem;
-    background-color: var(--grey);
-    width: fit-content;
-    padding: 0.5rem;
-    padding-right: 1.5rem;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    border-radius: 100px;
-}
+/* Perso les zones de text */
 .infopush input {
     background: none;
     color: var(--light);
@@ -561,6 +552,7 @@ h1.active {
     margin-right: auto;
     margin-top: -5rem;
 }
+/* separe les inputs */
 .nameinfo {
     display: flex;
     margin-top: 2rem;
@@ -568,4 +560,22 @@ h1.active {
 .sendinfo {
     display: flex;
     margin-top: 2rem;
+}
+/* Perso la page admin */
+.admin-body{
+    background-color: rgb(163, 163, 163);
+}
+/* Leger perso du tab */
+table {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    background-color: var(--light);
+}
+td {
+    background-color: var(--base);
+    padding: 0.5rem;
+    text-align: center;
+    color: var(--light);
 }

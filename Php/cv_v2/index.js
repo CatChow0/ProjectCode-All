@@ -1,6 +1,3 @@
-const { keypress } = require("./lib/keypress");
-var listener = new window.keypress.Listener();
-
 function show() {
     var element = document.getElementById("showcase");
     var poutre = document.getElementById("blur");
