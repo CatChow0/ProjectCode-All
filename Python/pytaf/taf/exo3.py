@@ -10,4 +10,4 @@ else:
     A = input('Convert Cm --> Inch, please enter value: ')
     B = A
     A = float(A) * float(etal_inch)
-    print(f'{B}Cm = {A}')
+    print(f'{B}Cm = {A}Inch')
