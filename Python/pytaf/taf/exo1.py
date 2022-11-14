@@ -3,14 +3,20 @@ import random
 def guess(x):
     random_number = random.randint(1, x)
     guess = 0
-    while guess != random_number:
+    tent = 7
+    while guess != random_number and tent>0:
         guess = int(input(f'Guess a number between 1 and {x}:'))
+        tent = tent -1
         if guess < random_number:
-            print('Sorry, guess again. Too low.')
+            print(f'Sorry, guess again. Too low. (Remaining test {tent} )')
         elif guess > random_number:
-            print('Sorry, guess again. Too high')
-        
-    print(f'GG MY MAN YOU GOT IT, {random_number} WAS THE NUMBER')
+            print(f'Sorry, guess again. Too high (Remaining test {tent} )')
+            
+    if tent == 0:
+        print(f'YOU LOSE, {random_number} was the number, try again')
+    else :
+        print(f'GG MY MAN YOU GOT IT, {random_number} WAS THE NUMBER')
+
 
 guess(10)
 
@@ -33,3 +39,4 @@ def computer_guess(x):
     print(f'GG MY PC BOY, YOU GOT IT, {guess} WAS THE NUMBER')
 
 computer_guess(1000)
+
