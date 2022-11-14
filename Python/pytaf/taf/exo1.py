@@ -1,10 +1,10 @@
 import random 
 
 def guess(x):
-    random_number = random.randint(1, x)
+    random_number = random.randint(1, x) #Selectionne un nombre aléatoire
     guess = 0
-    tent = 7
-    while guess != random_number and tent>0:
+    tent = 7 #tentative restante
+    while guess != random_number and tent>0: #Boucle tant que la proposition est fausse et qu'il reste des tentative
         guess = int(input(f'Guess a number between 1 and {x}:'))
         tent = tent -1
         if guess < random_number:
@@ -12,6 +12,7 @@ def guess(x):
         elif guess > random_number:
             print(f'Sorry, guess again. Too high (Remaining test {tent} )')
             
+    #Affiche resultat
     if tent == 0:
         print(f'YOU LOSE, {random_number} was the number, try again')
     else :
