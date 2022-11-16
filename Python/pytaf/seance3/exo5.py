@@ -10,6 +10,8 @@ def start():
     if nb_maj>0:
         print("Il y a " + str(nb_maj) + " majuscules.")
         l = list(a.split(" "))
+        l.sort(key=len)
+        print(l)
         print(l[-1], "est le mot le plus long, et",l[0],"est le mot le plus petit")
     else:
         print('Il faut au moins une majuscules')
