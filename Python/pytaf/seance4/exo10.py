@@ -60,4 +60,3 @@ else:
     print(value_hp_pla())
     print(value_hp_mob())
     print(f"\n{Fore.RED}Tu a perdu{Style.RESET_ALL}\n")
-
