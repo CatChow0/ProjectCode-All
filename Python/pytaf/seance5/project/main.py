@@ -1,6 +1,6 @@
 from colorama import Fore
 from colorama import Style
-import pickle
+from io import open
 
 def tri_selection(crepe_def):
     for i in range(len(crepe_def)):
@@ -55,9 +55,15 @@ Price = [5.90,6.90,7.90,9.90,8.90,5.19]
 Chocapic = []
 ING = ['Nutela', 'Confiture Fraise', 'Ananas', 'Noisette','Jambon','Fromage','Kebab','Poulet','Sarasin au trois fromage','Tomate','Chantilly','Sucre Glace','Saucissons']
 choix = []
+stock_menu = ['Crêpe Confiture Fraise - 5.90 € - Sucrée\n Sucre Glace, Confiture fraise','Crêpe Nutela - 6.90 € - Sucrée\n Nutela, Chantilly','Crêpe Sarasin au trois fromage - 7.90 € - Végétarienne\n Fromage de chèvre, mozzarella, cheddar','Crêpe Jambon Fromage - 9.90 € - Salée\n Jambon, Ananas, Fromage','Crêpe Kebab Poulet - 8.90 € - Salée\n Kebab, Poulet, Tomate, Émentale','Crêpe du Jour - 5.19 € - Sucrée\n Ananas Noisette Saucissons']
 
-fichier = open('list.txt', 'wb')
-pickle.dump(crepe_def, fichier)
+with open('list.txt', 'w', encoding='utf-8') as r:
+    for item in stock_menu:
+        r.write(f'{item}'+'\n')
+
+with open('list.txt', 'a', encoding='utf-8') as h:
+    for item in Price:
+        h.write(f'{item}'+'€'+'\n')
 
 for i in range (4):
     print(f'{rank[i]}'+'. '+ f'{Liste_menu[i]}') 
@@ -73,6 +79,10 @@ if menu == 1 :
         choice()
         p = 6 + len(choix)
         print(f'Votre Crêpe {Fore.LIGHTMAGENTA_EX}{choix}{Style.RESET_ALL} est en train d\'être préparer, le prix est de {Fore.YELLOW}{p} €{Style.RESET_ALL} ,{Fore.GREEN}buon{Style.RESET_ALL} appe{Fore.LIGHTRED_EX}tito{Style.RESET_ALL}')               
+        with open('list.txt','a',encoding='utf-8') as ch:
+            ch.write('Crêpe personalisé : \n')
+            for item in choix:
+                ch.write(f'{item}'+'\n')
 if menu == 2 :
     tri_bulle(Price)
     tri_prix()
@@ -86,6 +96,10 @@ if menu == 2 :
         choice()
         p = 6 + len(choix)
         print(f'Votre Crêpe {Fore.LIGHTMAGENTA_EX}{choix}{Style.RESET_ALL} est en train d\'être préparer, le prix est de {Fore.YELLOW}{p} €{Style.RESET_ALL} ,{Fore.GREEN}buon{Style.RESET_ALL} appe{Fore.LIGHTRED_EX}tito{Style.RESET_ALL}') 
+        with open('list.txt','a',encoding='utf-8') as ch:
+            ch.write('Crêpe personalisé : \n')
+            for item in choix:
+                ch.write(f'{item}'+'\n')
 if menu == 3 :
     tri_bulle(Price)
     tri_prix()
