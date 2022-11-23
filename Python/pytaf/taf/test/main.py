@@ -3,7 +3,7 @@ from colorama import Style
 SUC = ['Crêpe Nutela','Crêpe Confiture Fraise', 'Crêpe Ananas Noisette']
 SAL = ['Crêpe Jambon Fromage', 'Crêpe Kebab Poulet']
 VEG = ['Crêpe Sarasin au trois fromage']
-ING = ['Crêpe','Nutela', 'Confiture Fraise', 'Ananas', 'Noisette','Jambon','Fromage','Kebab','Poulet','Sarasin au trois fromage','Tomate','Chantilly','Sucre Glace',]
+ING = ['Nutela', 'Confiture Fraise', 'Ananas', 'Noisette','Jambon','Fromage','Kebab','Poulet','Sarasin au trois fromage','Tomate','Chantilly','Sucre Glace',]
 Perso = []
 Choice = int(input('Que voulez-vous faire Regarder le menu(1), Crêpe personaliser(2) ?: '))
 price = [4,0.6,0.5,0.7,0.6,0.3,0.5,1.6,1.3,1.8,0.9,0.2,2.8]
