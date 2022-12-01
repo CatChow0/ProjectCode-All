@@ -2,11 +2,11 @@
 
 Here is some code
 
-## What Code
+## `What Code`
 
 Here are some projects made to learn how to code.
-We find html/css, js/jsx , python a little php and Sql.
+We find `html/css`, `js/jsx` , `python` a bit of `php` and `MySql`.
 
-## Why
+## `Why`
 
 Why not
