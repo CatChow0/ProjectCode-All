@@ -4,9 +4,7 @@ function Upgrade(){
 
    function CloseUpgrade() {
     const UpMenu = document.querySelector('UpMenu')
-    UpMenu.addEventListener('click', ()=>{
-        UpMenu.classList.remove('On')
-    })
+    UpMenu.addEventListener('click',()=>{UpMenu.classList.toggle('On')})
    }
 
     return (
