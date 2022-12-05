@@ -6,7 +6,6 @@
 
 }
 
-
 .category ul{
   display: flex;
   background-color: var(--main-color-sec);
@@ -63,8 +62,6 @@
   text-decoration: underline;
 }
 
-
-
 .List {
   display: flex;
   background-color: var(--main-color-sec);
@@ -86,6 +83,7 @@
 .List li .PosterSize {
   width: 15rem;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 .List li:hover{
