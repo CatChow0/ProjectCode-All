@@ -48,14 +48,15 @@
   transition: all ease 200ms;
 }
 
-.NewTitle {
+.ShowPopTitle {
   Color: var(--main-color);
   background-color: var(--main-color-sec);
   padding-bottom: 0.5rem;
   border-radius: 1rem 1rem 0 0; 
+  display: flex;
 }
 
-.NewTitle h2{
+.ShowPopTitle h2{
   font-size: xx-large;
   font-weight: bold;
   margin-left: 2rem;
@@ -63,12 +64,12 @@
 }
 
 
+
 .List {
   display: flex;
   background-color: var(--main-color-sec);
   font-weight: bold;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  
 
 }
 
@@ -96,4 +97,20 @@
   border-radius: 1rem;
   border-color: var(--main-color-sec);
   border-width: 1rem;
+}
+
+.MoviePopTitle {
+  Color: var(--main-color);
+  background-color: var(--main-color-sec);
+  margin-top: 2rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1rem 1rem 0 0; 
+  display: flex;
+}
+
+.MoviePopTitle h2{
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left: 2rem;
+  text-decoration: underline;
 }

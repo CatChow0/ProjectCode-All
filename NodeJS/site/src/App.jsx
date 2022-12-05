@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './Navbar';
 import Results from './Results';
+import Latest from "./Latest";
 
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <div>
       <Navbar></Navbar>
       <Results></Results>
+      <Latest></Latest>
       
 
     </div>

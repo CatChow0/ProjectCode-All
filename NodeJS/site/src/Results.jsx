@@ -2,14 +2,15 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 function Results() {
-    const [NewsList, setNewsList] = useState([]);
-    const [NewsListFiltered, setNewsListFiltered] = useState([]);
+    const [PopularList, setPopularList] = useState([]);
+    const [PopularListFiltered, setPopularListFiltered] = useState([]);
 
 
     async function getData () {
-        const res = await axios.get("https://api.themoviedb.org/3/tv/popular?api_key=15e383204c1b8a09dbfaaa4c01ed7e17&language=fr-Fr");
-        setNewsList(res.data.results);
-        setNewsListFiltered(res.data.results);
+        const pop = await axios.get("https://api.themoviedb.org/3/tv/popular?api_key=15e383204c1b8a09dbfaaa4c01ed7e17&language=fr-Fr");
+        setPopularList(pop.data.results);
+        setPopularListFiltered(pop.data.results);
+
     }
 
     useEffect(() => {
@@ -18,12 +19,12 @@ function Results() {
 
     function handlechange(e) {
         if (!e.target.value) {
-            setNewsListFiltered(NewsList);
+            setPopularListFiltered(PopularList);
             return;
         }
 
-        setNewsListFiltered(
-            NewsList.filter((tv) => tv.name.includes(e.target.value))
+        setPopularListFiltered(
+            PopularList.filter((tv) => tv.name.includes(e.target.value))
         );
     }
 
@@ -31,16 +32,17 @@ function Results() {
     return (
         <div>
             <input className="SearchBar" onChange={handlechange} type='text' placeholder=" Exemple: Chainsaw Man"/>
-            <div className="NewTitle">
-                <h2>Nouveau</h2>
+            <div className="ShowPopTitle">
+                <h2>
+                    Série Populaire
+                </h2>
             </div>
             <ul className="List">
-            {NewsListFiltered.map((tv) =>{
-                return <li key={tv.name}><a>{tv.name}</a><img className="PosterSize" src={'https://image.tmdb.org/t/p/original'+tv.poster_path}></img></li>
-            })}
+                {PopularListFiltered.map((tv) =>{
+                    return <li key={tv.name} ><img className="PosterSize" src={'https://image.tmdb.org/t/p/original'+tv.poster_path} alt='Image Du Film'></img><a>{tv.name}</a></li>
+                })}
             </ul>
             
-
         </div>
     );
 }
