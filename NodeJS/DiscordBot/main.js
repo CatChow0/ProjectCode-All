@@ -6,6 +6,7 @@ const loadEvents = require("./Loader/loadEvents")
 const config = require('./config')
 
 bot.commands = new Discord.Collection()
+bot.color = "#FF0000";
 
 bot.login(config.token)
 loadCommands(bot)

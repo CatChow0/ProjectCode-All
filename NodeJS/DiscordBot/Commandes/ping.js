@@ -5,8 +5,9 @@ module.exports = {
     description: "Affiche la latence",
     permission: "Aucune",
     dm: true,
+    category: "Information",
 
-    async run(bot, message) {
+    async run(bot, message, args) {
 
         await message.reply(`Ping : \`${bot.ws.ping}\``)
     }
