@@ -7,7 +7,7 @@ theme : uncover
 <style>
     @font-face {
         font-family: "Game";
-        src: url(fonts/Games.woof);
+        src: url('https://fonts.cdnfonts.com/css/game%27');
     }
 
     @keyframes rotate {
@@ -69,18 +69,10 @@ theme : uncover
         left: 383px;
         animation: rotate 3s linear infinite
     }
-
-
-
-    
-
-
-
 </style>
 
-
-<img class="flower flower-l" src="assets/flower.png">
-<img class="flower flower-r" src="assets/flower.png">
+<img class="flower flower-l" src="https://i.imgur.com/hoO6CV4.png">
+<img class="flower flower-r" src="https://i.imgur.com/hoO6CV4.png">
 <h1>
 SEED WARS
 </h1>
@@ -118,7 +110,7 @@ Description
         </div>
     </div>
     <div class="col-r">
-        <img src="assets/graines.jpg" alt="placeholder">
+        <img src="https://i.imgur.com/XO01Rro.jpg" alt="placeholder">
     </div>
 </div>
 
@@ -172,11 +164,11 @@ User Story
 <h2>
     Roadmap
 </h2>
-<img src="assets/roadmap.png">
+<img src="https://i.imgur.com/7HaJ8ls.png">
 
 ---
 
-<img class="poker" src="assets/jeton-poker.png">
+<img class="poker" src="https://i.imgur.com/fTkCfuO.png">
 <h2>
     Poker Planning
 </h2>
@@ -224,4 +216,3 @@ User Story
 <footer>
     Tous droits réservés The Lab
 </footer>
-
