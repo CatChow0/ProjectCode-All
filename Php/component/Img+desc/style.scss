@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    padding: none;
+}
+
+body {
+
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    div {
+
+        background: rgb(0,0,0);
+        background: linear-gradient(-90deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0.8) 100%);
+        
+        .ImgContent {
+            background-image: url(assets/TruenoWP.png);
+            width: 100vw;
+            height: 70vh;
+            opacity: 100%;
+
+            p {
+                width: 40%;
+                font-size: 1.5rem;
+                color: white;
+                opacity: 100%;
+            }
+
+        }
+    }
+    
+
+
+}
