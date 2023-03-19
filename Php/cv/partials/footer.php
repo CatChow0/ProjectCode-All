@@ -1,4 +1,4 @@
-        <footer>
+        <footer id="Contact">
             <div>
                 <ul class="FootSharedStyle">
                     <li class="FootTitle">Titre n°1</li>
@@ -32,7 +32,7 @@
                     </li>
                 </ul>
             </div>
-            <h5>Copyright here</h5>
+            <h5>Ce site internet est encore en cours de dévelopement</h5>
         </footer>
     <script src="./js/index.js"></script>
     </body>
