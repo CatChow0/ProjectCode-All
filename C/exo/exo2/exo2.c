@@ -8,9 +8,7 @@ int main () {
 
     scanf("%c", &a);
 
-    int ascii = a;
-
-    printf("%c = %d", a, ascii);
+    printf("La lettre en ASCII(dec) est %d et en ASCII(hex) est %x\n", a, a);
 
     return 0;
 }

@@ -2,7 +2,6 @@
 
 int main () {
 
-
     int age;
     char nom[50];
 
@@ -10,7 +9,7 @@ int main () {
 
     scanf("%d %s", &age, &nom);
 
-    printf("Vous avez %d mr.%s", age, nom);
+    printf("Vous avez %d ans mr.%s", age, nom);
 
     return 0;
 }
