@@ -11,17 +11,16 @@ int main() {
     if (op == '+') {
         res = a+b;
         printf("La somme de %d + %d = %d\n",a,b,res);
-    } if (op == '-') {
+    }
+    if (op == '-') {
         res = a-b;
-        printf("La soustraction de %d - %d = %d\n",a,b,res);
+        printf("La somme de %d - %d = %d\n",a,b,res);
     } if (op == '*') {
         res = a*b;
-        printf("Le produit de %d * %d = %d\n",a,b,res);
+        printf("La somme de %d * %d = %d\n",a,b,res);
     } if (op == '/') {
         res = a/b;
-        printf("La division de %d / %d = %f\n",a,b,res);
-    } else {
-        printf("Erreur\n");
+        printf("La somme de %d / %d = %d\n",a,b,res);
     }
     return 0;
 }
