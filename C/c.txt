@@ -28,3 +28,11 @@ int main() {
 
     return 0;
 }
+
+afficher chaîne char :
+
+char hello_world[6] = {'H', 'E', 'L', 'L', 'O', '\0'};
+printf("%s", hello_world)
+
+\0 a la fin de la chaîne
+
