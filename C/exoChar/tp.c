@@ -8,7 +8,7 @@ int main () {
     int pv = 10;
     char mot_secret[7] = {'P','O','U','T','R','E','\0'};
     int taille_mot = strlen(mot_secret);
-    char mot_trouve[taille_mot+1] = {'-','-','-','-','-','-','\0'};
+    // char mot_trouve[taille_mot+1] = {'-','-','-','-','-','-','\0'};
     char saisie_utilisateur;
 
     bool game_statue = false;
