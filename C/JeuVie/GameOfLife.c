@@ -1,14 +1,29 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-#include <SDL2/SDL.h>
+#include <time.h>     //Librairi Integration Temps
+#include <SDL2/SDL.h> //Librairi Interface Graphique
+#include <conio.h>
+#include <setjmp.h>
 
-#define SCREEN_WIDTH 1920
+jmp_buf restart_env;
+
+// --------------------------------------------------------- //
+// Defini la taille de l'affichage et la taille des cellules //
+// --------------------------------------------------------- //
+#define SCREEN_WIDTH 1920 
 #define SCREEN_HEIGHT 1080
-#define CELL_SIZE 10
+#define CELL_SIZE 5
+
+// --------------------------------- //
+// Defini la grille du jeu de la vie //
+// --------------------------------- // 
 
 int grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
 int new_grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
+
+// ----------------------------------------- //
+// Place les cellules initiale sur la grille //
+// ----------------------------------------- //
 
 void init_grid() {
     srand(time(NULL));
@@ -18,6 +33,10 @@ void init_grid() {
         }
     }
 }
+
+// ------------------------------------- //
+// Compte le nombre de cellules voisines //
+// ------------------------------------- //
 
 int count_neighbors(int x, int y) {
     int count = 0;
@@ -31,6 +50,10 @@ int count_neighbors(int x, int y) {
     }
     return count;
 }
+
+// -------------------------------------------------------------------- //
+// Acualise la grille du jeu en fontion du nombre de voisin par cellule //
+// -------------------------------------------------------------------- //
 
 void update_grid() {
     for(int i = 0; i < SCREEN_HEIGHT/CELL_SIZE; i++) {
@@ -58,6 +81,10 @@ void update_grid() {
     }
 }
 
+// -------------------------- //
+// Affiche la grille actuelle //
+// -------------------------- //
+
 void draw_grid(SDL_Renderer* renderer) {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
@@ -71,6 +98,10 @@ void draw_grid(SDL_Renderer* renderer) {
         }
     }
 }
+
+// -------------------------------------------------------------------- //
+// Initialise Le jeu en appelant les fonctions d'affichage et de grille //
+// -------------------------------------------------------------------- //
 
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
@@ -88,6 +119,6 @@ int main(int argc, char* argv[]) {
         update_grid();
         draw_grid(renderer);
         SDL_RenderPresent(renderer);
-        SDL_Delay(100);
+        SDL_Delay(1);
     }
 }
