@@ -16,6 +16,9 @@
 // Defini la grille du jeu de la vie //
 // --------------------------------- // 
 
+// int SCREEN_WIDTH = 1280;
+// int SCREEN_HEIGHT = 720;
+
 int grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
 int new_grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
 
@@ -117,6 +120,26 @@ void draw_grid(SDL_Renderer* renderer) {
 // --------------------------------------------------------------------- //
 
 int main(int argc, char* argv[]) {
+
+    // int screen_size;
+    // printf("Choisissez la taille de l'affichage: \n1: 480p\n2: 720p (default) \n3: 1080p\n");
+    
+    // scanf("%d", &screen_size);
+
+    // if (screen_size == 1) {
+    //     SCREEN_HEIGHT = 480;
+    //     SCREEN_WIDTH = 704;
+    // } else if (screen_size == 2) {
+    //     SCREEN_HEIGHT = 720;
+    //     SCREEN_WIDTH = 1280;
+    // } else if (screen_size == 3) {
+    //     SCREEN_HEIGHT = 1080;
+    //     SCREEN_WIDTH = 1920;
+    // } else {
+
+    // }
+
+    
     SDL_Init(SDL_INIT_VIDEO);
 
     // ---------------------- //
@@ -145,8 +168,8 @@ int main(int argc, char* argv[]) {
         update_grid();                  // Met a jour la grille
         draw_grid(renderer);            // Rendu de la grille
         SDL_RenderPresent(renderer);    // Rendu de l'affichage actuelle
-        SDL_Delay(1);                  // Temps entre chaque génération de cellules
+        SDL_Delay(1);                   // Temps entre chaque génération de cellules
         generation++;
-        printf("Generation %d\n", generation);
+        printf("Generation %d\n", generation); // Affiche la génération actuelle de cellules
     } 
 }
