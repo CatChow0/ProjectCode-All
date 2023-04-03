@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>  //Librairi Pour les Booléen
 #include <time.h>     //Librairi Integration Temps
 #include <SDL2/SDL.h> //Librairi Interface Graphique
 
@@ -7,9 +8,9 @@
 // Defini la taille de l'affichage et la taille des cellules //
 // --------------------------------------------------------- //
 
-#define SCREEN_WIDTH 1920 
-#define SCREEN_HEIGHT 1080
-#define CELL_SIZE 5
+#define SCREEN_WIDTH 1280 
+#define SCREEN_HEIGHT 720
+#define CELL_SIZE 3
 
 // --------------------------------- //
 // Defini la grille du jeu de la vie //
@@ -131,6 +132,8 @@ int main(int argc, char* argv[]) {
     // Boucle du Jeu //
     // ------------- //
 
+    int generation = 0;
+
     while(1) { 
         SDL_Event event;
         while(SDL_PollEvent(&event)) {
@@ -142,6 +145,8 @@ int main(int argc, char* argv[]) {
         update_grid();                  // Met a jour la grille
         draw_grid(renderer);            // Rendu de la grille
         SDL_RenderPresent(renderer);    // Rendu de l'affichage actuelle
-        SDL_Delay(100);                 // Temps entre chaque génération de cellules
-    }
+        SDL_Delay(1);                  // Temps entre chaque génération de cellules
+        generation++;
+        printf("Generation %d\n", generation);
+    } 
 }
