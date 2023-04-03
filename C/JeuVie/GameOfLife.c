@@ -2,14 +2,11 @@
 #include <stdlib.h>
 #include <time.h>     //Librairi Integration Temps
 #include <SDL2/SDL.h> //Librairi Interface Graphique
-#include <conio.h>
-#include <setjmp.h>
-
-jmp_buf restart_env;
 
 // --------------------------------------------------------- //
 // Defini la taille de l'affichage et la taille des cellules //
 // --------------------------------------------------------- //
+
 #define SCREEN_WIDTH 1920 
 #define SCREEN_HEIGHT 1080
 #define CELL_SIZE 5
@@ -59,21 +56,31 @@ void update_grid() {
     for(int i = 0; i < SCREEN_HEIGHT/CELL_SIZE; i++) {
         for(int j = 0; j < SCREEN_WIDTH/CELL_SIZE; j++) {
             int count = count_neighbors(i, j);
+
+            // --------------------------------------------------- //
+            // Verifie qu'il n'y ait pas trop de cellules voisines //
+            // --------------------------------------------------- //
+
             if(grid[i][j]) {
                 if(count < 2 || count > 3) {
-                    new_grid[i][j] = 0;
+                    new_grid[i][j] = 0; // Si trop ou pas assez de cellules voisines, tue la cellule
                 } else {
-                    new_grid[i][j] = 1;
+                    new_grid[i][j] = 1; // Sinon, la cellule vie
                 }
             } else {
                 if(count == 3) {
-                    new_grid[i][j] = 1;
+                    new_grid[i][j] = 1; // Si y'a assez de cellules voisines, la cellule vie
                 } else {
-                    new_grid[i][j] = 0;
+                    new_grid[i][j] = 0; // Sinon, la cellule est tue
                 }
             }
         }
     }
+
+    // --------------------------------------------------------------- //
+    // Actualise la grille par rapport au nombre de voisin par cellule //
+    // --------------------------------------------------------------- //
+
     for(int i = 0; i < SCREEN_HEIGHT/CELL_SIZE; i++) {
         for(int j = 0; j < SCREEN_WIDTH/CELL_SIZE; j++) {
             grid[i][j] = new_grid[i][j];
@@ -86,9 +93,14 @@ void update_grid() {
 // -------------------------- //
 
 void draw_grid(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
-    SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);         // Couleur de l'arrière plan
+    SDL_RenderClear(renderer);                              // Fait le rendu de l'arrière plan
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);   // Couleur des cellules
+
+    // ---------------------------------- //
+    // Dessine les cellules sur la grille //
+    // ---------------------------------- //
+
     for(int i = 0; i < SCREEN_HEIGHT/CELL_SIZE; i++) {
         for(int j = 0; j < SCREEN_WIDTH/CELL_SIZE; j++) {
             if(grid[i][j]) {
@@ -99,16 +111,27 @@ void draw_grid(SDL_Renderer* renderer) {
     }
 }
 
-// -------------------------------------------------------------------- //
-// Initialise Le jeu en appelant les fonctions d'affichage et de grille //
-// -------------------------------------------------------------------- //
+// --------------------------------------------------------------------- //
+// Initialise Le jeu en appellant les fonctions d'affichage et de grille //
+// --------------------------------------------------------------------- //
 
 int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
+
+    // ---------------------- //
+    // Crée la fenetre de jeu //
+    // ---------------------- //
+
     SDL_Window* window = SDL_CreateWindow("Jeu de la Vie", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-    init_grid();
-    while(1) {
+
+    init_grid(); // Crée la grille initiale
+
+    // ------------- //
+    // Boucle du Jeu //
+    // ------------- //
+
+    while(1) { 
         SDL_Event event;
         while(SDL_PollEvent(&event)) {
             if(event.type == SDL_QUIT) {
@@ -116,9 +139,9 @@ int main(int argc, char* argv[]) {
                 return 0;
             }
         }
-        update_grid();
-        draw_grid(renderer);
-        SDL_RenderPresent(renderer);
-        SDL_Delay(1);
+        update_grid();                  // Met a jour la grille
+        draw_grid(renderer);            // Rendu de la grille
+        SDL_RenderPresent(renderer);    // Rendu de l'affichage actuelle
+        SDL_Delay(100);                 // Temps entre chaque génération de cellules
     }
 }
