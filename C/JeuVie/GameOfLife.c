@@ -8,19 +8,26 @@
 // Defini la taille de l'affichage et la taille des cellules //
 // --------------------------------------------------------- //
 
-#define SCREEN_WIDTH 1280 
-#define SCREEN_HEIGHT 720
+#define RENDER_WIDTH 1920
+#define RENDER_HEIGHT 1080
 #define CELL_SIZE 3
 
 // --------------------------------- //
 // Defini la grille du jeu de la vie //
 // --------------------------------- // 
 
-// int SCREEN_WIDTH = 1280;
-// int SCREEN_HEIGHT = 720;
+int SCREEN_WIDTH = 1280;    // Taille de l'affichage
+int SCREEN_HEIGHT = 720;    // Taille de l'affichage
 
-int grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
-int new_grid[SCREEN_HEIGHT/CELL_SIZE][SCREEN_WIDTH/CELL_SIZE];
+int grid[RENDER_HEIGHT/CELL_SIZE][RENDER_WIDTH/CELL_SIZE];
+int new_grid[RENDER_HEIGHT/CELL_SIZE][RENDER_WIDTH/CELL_SIZE];
+
+// ---------------- //
+// Autres Variables //
+// ---------------- //
+
+int num = 1;        // Nombre comptant les générations déjà passé
+int Choix = 0;      // Choix de l'utilisateur pour continuer ou arreter
 
 // ----------------------------------------- //
 // Place les cellules initiale sur la grille //
@@ -97,7 +104,7 @@ void update_grid() {
 // -------------------------- //
 
 void draw_grid(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);         // Couleur de l'arrière plan
+    SDL_SetRenderDrawColor(renderer, 0,0,0,255);         // Couleur de l'arrière plan
     SDL_RenderClear(renderer);                              // Fait le rendu de l'arrière plan
     SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);   // Couleur des cellules
 
@@ -121,30 +128,34 @@ void draw_grid(SDL_Renderer* renderer) {
 
 int main(int argc, char* argv[]) {
 
-    // int screen_size;
-    // printf("Choisissez la taille de l'affichage: \n1: 480p\n2: 720p (default) \n3: 1080p\n");
-    
-    // scanf("%d", &screen_size);
+    // --------------------------------- //
+    // Choix de la taille de l'affichage //
+    // --------------------------------- //
 
-    // if (screen_size == 1) {
-    //     SCREEN_HEIGHT = 480;
-    //     SCREEN_WIDTH = 704;
-    // } else if (screen_size == 2) {
-    //     SCREEN_HEIGHT = 720;
-    //     SCREEN_WIDTH = 1280;
-    // } else if (screen_size == 3) {
-    //     SCREEN_HEIGHT = 1080;
-    //     SCREEN_WIDTH = 1920;
-    // } else {
+    int screen_size;
+    printf("Choisissez la taille de l'affichage: \n1: 480p\n2: 720p (default) \n3: 1080p\n");
+    scanf("%d", &screen_size);
 
-    // }
-
-    
-    SDL_Init(SDL_INIT_VIDEO);
+    if (screen_size == 1) {
+        SCREEN_HEIGHT = 480; 
+        SCREEN_WIDTH = 704;
+    } else if (screen_size == 2) {
+        SCREEN_HEIGHT = 720;
+        SCREEN_WIDTH = 1280;
+    } else if (screen_size == 3) {
+        SCREEN_HEIGHT = 1080;
+        SCREEN_WIDTH = 1920;
+    } else if (screen_size > 3 || screen_size < 1) { // Taille par defaut 720p
+        SCREEN_HEIGHT = 720;
+        SCREEN_WIDTH = 1280;
+        printf("\nErreur /!\\ la taille par defaut a été appliqué.");
+    }
 
     // ---------------------- //
     // Crée la fenetre de jeu //
     // ---------------------- //
+
+    SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window* window = SDL_CreateWindow("Jeu de la Vie", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
     SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
@@ -170,6 +181,29 @@ int main(int argc, char* argv[]) {
         SDL_RenderPresent(renderer);    // Rendu de l'affichage actuelle
         SDL_Delay(1);                   // Temps entre chaque génération de cellules
         generation++;
-        printf("Generation %d\n", generation); // Affiche la génération actuelle de cellules
+
+        // printf("Generation %d\n", generation); // Affiche la génération actuelle de cellules
+
+        // -------------------------------------------- //
+        // Demande a l'utilisateur si il veux continuer //
+        // -------------------------------------------- //
+
+        if(num == 1000) {
+            printf("Nous somme a la generation %d\nVoulez vous ARRETER ici ou CONTINUER simulation :\n1. Arreter\n2. Continuer\n Veuillezentrez le chiffre de l'option choisie: ", generation);
+            scanf("%d", &Choix);
+
+            if(Choix == 1) {    // Arrete le programme
+                return 0;
+            } else if (Choix == 2) { 
+                num = 1;
+            }
+
+
+        } else if (num < 1000) {
+            num++;
+            // printf("\nnum %d", num); Affiche la valeur actuelle du num
+        } else if (num > 1000) {
+            num = 1;
+        }
     } 
 }
