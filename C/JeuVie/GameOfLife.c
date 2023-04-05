@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>  //Librairi Pour les Booléen
-#include <time.h>     //Librairi Integration Temps
-#include <SDL2/SDL.h> //Librairi Interface Graphique
+#include <time.h>           //Librairi Integration Temps
+#include <SDL2/SDL.h>       //Librairi Interface Graphique
+// #include <SDL2/SDL_ttf.h>   //Librairi Text
 
 // --------------------------------------------------------- //
 // Defini la taille de l'affichage et la taille des cellules //
@@ -11,13 +11,12 @@
 #define RENDER_WIDTH 1920
 #define RENDER_HEIGHT 1080
 #define CELL_SIZE 3
-
 // --------------------------------- //
 // Defini la grille du jeu de la vie //
 // --------------------------------- // 
 
-int SCREEN_WIDTH = 1280;    // Taille de l'affichage
-int SCREEN_HEIGHT = 720;    // Taille de l'affichage
+int SCREEN_WIDTH;    // Taille de l'affichage
+int SCREEN_HEIGHT;    // Taille de l'affichage
 
 int grid[RENDER_HEIGHT/CELL_SIZE][RENDER_WIDTH/CELL_SIZE];
 int new_grid[RENDER_HEIGHT/CELL_SIZE][RENDER_WIDTH/CELL_SIZE];
@@ -28,6 +27,11 @@ int new_grid[RENDER_HEIGHT/CELL_SIZE][RENDER_WIDTH/CELL_SIZE];
 
 int num = 1;        // Nombre comptant les générations déjà passé
 int Choix = 0;      // Choix de l'utilisateur pour continuer ou arreter
+int generation = 0; // Nombre de génération
+int num_max = 2000; // Nombre génération par cycle
+int gen_temp = 1;   // Nombre de génération avant de print la génération actuelle
+long clk_tck = CLOCKS_PER_SEC;
+clock_t t1, t2, t3;
 
 // ----------------------------------------- //
 // Place les cellules initiale sur la grille //
@@ -104,9 +108,9 @@ void update_grid() {
 // -------------------------- //
 
 void draw_grid(SDL_Renderer* renderer) {
-    SDL_SetRenderDrawColor(renderer, 0,0,0,255);         // Couleur de l'arrière plan
-    SDL_RenderClear(renderer);                              // Fait le rendu de l'arrière plan
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);   // Couleur des cellules
+    SDL_SetRenderDrawColor(renderer, 0,0,0, 255);        // Couleur de l'arrière plan
+    SDL_RenderClear(renderer);                           // Fait le rendu de l'arrière plan
+    SDL_SetRenderDrawColor(renderer, 200, 200, 200,255);   // Couleur des cellules
 
     // ---------------------------------- //
     // Dessine les cellules sur la grille //
@@ -162,11 +166,20 @@ int main(int argc, char* argv[]) {
 
     init_grid(); // Crée la grille initiale
 
+    // TTF_init();
+
+    // TTF_Font* Arial = TTF_OpenFont("Arial.ttf", 26);
+    // SDL_Color Red = {255, 0, 0};
+    // SDL_Surface* textSurf = TTF_RenderTextSolid(Arial, "Test", Red);
+    // SDL_Texture* textTexture = SDL_CreateTextureFromSurface(renderer, textSurf);
+    // SDL_Rect textRect = {30, 30, textSurf->w, textSurf->h};
+    // SDL_FreeSurface(textSurf);
+    // TTF_CloseFont(Arial);
+
     // ------------- //
     // Boucle du Jeu //
     // ------------- //
-
-    int generation = 0;
+    t1 = clock();
 
     while(1) { 
         SDL_Event event;
@@ -176,9 +189,12 @@ int main(int argc, char* argv[]) {
                 return 0;
             }
         }
+        // SDL_RenderCopy(renderer, textTexture, NULL, &textRect);
         update_grid();                  // Met a jour la grille
         draw_grid(renderer);            // Rendu de la grille
         SDL_RenderPresent(renderer);    // Rendu de l'affichage actuelle
+        t2 = clock();
+        t3 = clock();  
         SDL_Delay(1);                   // Temps entre chaque génération de cellules
         generation++;
 
@@ -188,22 +204,33 @@ int main(int argc, char* argv[]) {
         // Demande a l'utilisateur si il veux continuer //
         // -------------------------------------------- //
 
-        if(num == 1000) {
-            printf("Nous somme a la generation %d\nVoulez vous ARRETER ici ou CONTINUER simulation :\n1. Arreter\n2. Continuer\n Veuillezentrez le chiffre de l'option choisie: ", generation);
+        if(num == num_max) {
+            printf("\nNous somme a la generation %d\nTemps ecoule depuis le début : %lf (s)\nVoulez vous ARRETER ici ou CONTINUER la simulation :\n1. Arreter\n2. Continuer\n3. Poursuivre pour 10 000 generation\nVeuillez entrez le chiffre de l'option choisie: ", generation, (double)(t2-t1)/(double)clk_tck);
             scanf("%d", &Choix);
 
             if(Choix == 1) {    // Arrete le programme
+                // TTF_Quit();
                 return 0;
             } else if (Choix == 2) { 
                 num = 1;
+            } else if (Choix == 3) { 
+                num_max = 10000;
+                num = 1;
             }
 
-
-        } else if (num < 1000) {
+        } else if (num < num_max) {
             num++;
             // printf("\nnum %d", num); Affiche la valeur actuelle du num
-        } else if (num > 1000) {
+        } else if (num > num_max) {
             num = 1;
+        } 
+        if (gen_temp < 100) {
+            gen_temp++;
+            // printf("%d", gen_temp);
+        } else if (gen_temp > 99) {
+            printf("\nGeneration actuelle : %d", generation); // Affiche la génération actuelle toute les x génération
+            gen_temp = 1;
         }
+
     } 
 }
