@@ -34,7 +34,7 @@ class Game:
         running = True
         while running:
             self.handle_imput()
-            self.player.update_animation()
+            # self.player.update_animation()
             self.group.update()
             self.group.center(self.player.rect)
             self.group.draw(self.screen)

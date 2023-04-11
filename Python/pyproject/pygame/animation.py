@@ -5,11 +5,11 @@ class AnimateSprite(pygame.sprite.Sprite):
         self.image = pygame.image.load(f"{sprite_name}.png")
         self.current_image = 0
         self.images = animations.get(sprite_name)
-    def animate(self):
-        self.current_image += 1
-        if self.current_image >= len(self.images):
-            self.current_image = 0
-        self.image = self.images[self.current_image]
+    # def animate(self):
+    #     self.current_image += 1
+    #     if self.current_image >= len(self.images):
+    #         self.current_image = 0
+    #     self.image = self.images[self.current_image]
 def load_animation_images(sprite_name):
     images = []
     path = f"{sprite_name}/{sprite_name}"

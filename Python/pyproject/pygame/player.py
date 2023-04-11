@@ -8,8 +8,8 @@ class Player(animation.AnimateSprite):
         self.rect = self.image.get_rect()
         self.position = [x, y]
         self.speed = 2
-    def update_animation(self):
-        self.animate()
+    # def update_animation(self):
+    #     self.animate()
     def move_right(self): self.position[0]+= self.speed
     def move_left(self): self.position[0]-= self.speed
     def move_up(self): self.position[1]-= self.speed
