@@ -1,0 +1,477 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&family=Roboto&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+body{
+  background-color: #fafafa;
+}
+
+/* ------------------------------HEADER NAV----------------------------------------------- */
+
+a {
+  text-decoration: none !important; /* no underline */
+}
+
+ul {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 350px;
+  height: 100%;
+  background: white;
+  position: fixed;
+  border-right: 1px solid #e2e2e2;
+}
+
+
+.wrapper .sidebar .title {
+  margin-bottom: 30px;
+  display: flex;
+  font-family: 'Red Rose', cursive; 
+  text-align: center;
+  cursor: pointer;
+}
+
+.wrapper .sidebar .title a{
+  color: rgb(53, 53, 53);
+}
+
+.wrapper .sidebar .title ul li a{
+  color: black;
+  display: block;
+  text-transform: uppercase;
+  font-family: 'Red Rose', cursive; 
+  font-size: 18px;
+  margin: 30px;
+  margin-left: 60px;
+  width: fit-content;
+}
+
+.wrapper .sidebar .li-main ul li a{
+  color: black;
+  display: block;
+  text-transform: uppercase;
+  font-family: 'Red Rose', cursive; 
+  font-size: 18px;
+  margin: 30px;
+  margin-left: 60px;
+  width: fit-content;
+}
+
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+
+.wrapper .sidebar .title .imgtext {
+    font-family: 'Red Rose', cursive; 
+    font-weight: 400;
+    font-size: 30px;
+    margin-top: 70px;
+}
+
+.wrapper .sidebar .title img {
+    width: 75px;
+    height: 80px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 10px;
+}
+  
+
+.wrapper .sidebar .li-main {   
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 10px;
+}
+
+.wrapper .sidebar .li-main i {
+  padding-right: 20px;
+}
+
+
+/* ----------------------------CARD NAV---------------------------------------*/
+
+.card {
+  border-right : none !important;
+  border-right : none !important;
+  border-bottom: 1px #e2e2e2;
+
+}
+
+
+.card-header {
+  background-color: white;
+  border : none !important;
+  margin-left: 25px;
+}
+
+.card-header a {
+  text-transform: uppercase;
+  margin-top: 50px;
+  color: black;
+  font-weight: 400;
+  font-size: 18px;
+  font-family: 'Red Rose', cursive;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.card-header {
+  margin-top: 20px;
+}
+
+#headingOne img {
+  width: 25px;
+  height: 25px;
+  position: relative;
+  left: 170px;
+}
+
+.card-body a {
+  color : black;
+  text-transform: uppercase;
+  font-family: 'Red Rose', cursive;
+}
+
+.card-body li {
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  position: relative;
+  left: 30px;
+}
+
+#headingTwo img {
+  width: 25px;
+  height: 25px;
+  margin-left: 15px;
+}
+
+.card-body .card-sub img {
+  width: 20px;
+  height: 20px;
+  /* margin-left: 30px; */
+  margin-right: 10px;
+}
+
+.card-sub img a {
+  position: relative;
+  left: 30px;
+}
+
+/* ---------------------------FOOTERNAV--------------------------------------- */
+
+
+
+.footernav {
+  margin-top: 120px;
+  padding-left: 45px;
+  position: relative;
+}
+
+.add-icon {
+  width: 15px;
+  height: 15px;
+  margin-right: 15px;
+}
+
+.footernav a {
+  text-transform: uppercase;
+  margin-top: 50px;
+  color: black;
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 500px;
+  font-family: 'Red Rose', cursive;
+}
+
+.footernav .add-new-user {
+  margin-bottom: 10px;
+}
+
+.line-top, .line-bot {
+  height: 1px;
+  width: 80%;
+  margin-bottom: 10px;
+  background-color: black;
+}
+
+.add-new-user a:hover .add-icon,.add-new-admin a:hover .add-icon{
+  transform: rotate(1turn);
+  transition: 500ms ease-in-out;
+}
+
+/* -----------------------------MAIN CONTENT------------------------------------- */
+
+.main_content{
+  width: 80%;
+  margin-left: 350px;
+}
+
+.main_content .header{
+  padding: 20px;
+  text-transform: uppercase;
+  color: black;
+}
+
+.main_content .info{
+  margin: 20px;
+  color: black;
+  line-height: 25px;
+}
+
+.main_content .info {
+  margin-bottom: 20px;
+}
+
+
+
+
+
+
+/* CONTENU DE PAGE */
+
+.container {
+  margin-left: 500px;
+  text-transform: uppercase;
+}
+
+.container, .title-admin {
+  font-family: 'Red Rose', cursive;
+  font-weight: 400;
+}
+
+.title-admin {
+  margin-left: 510px;
+  margin-top: 75px;
+}
+
+/* Titre des catégories */
+.title-category {
+  margin: 80px 16px 16px 0;
+  size: 20px;
+  line-height: 25px;
+}
+
+/* Cartes des 30 derniers jours */
+.recents-card {
+  background-color: rgb(76, 64, 179);
+  border-radius: 16px;
+  width: 280px;
+  padding: 16px 32px 0.8px 16px;
+  margin: 0 16px 0 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.recents-title {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.recents-number {
+  color: white;
+}
+
+/* Cartes analyse */
+.daily-card, .resultats-card, .audio-card, .post-card, .new-post-card {
+  background-color: white;
+  border-radius: 16px;
+}
+
+.daily-card {
+  height: 240px;
+  width: 608px;
+  margin-right: 16px;
+}
+
+/* Carte  résultats des 30 derniers jours */
+.resultats-card{
+  height: 480px;
+  width: 280px;
+}
+
+/* Likes */
+
+.like-link {
+  position: relative;
+  top: 288px;
+}
+
+.card-like {
+  position: relative;
+  top: -30px;
+  left: 40px;
+}
+
+.circle1 {
+  color:tomato;
+}
+
+.fa-heart {
+  position: relative;
+  color: white;
+  top: -5px;
+  left: -28px;
+}
+
+/* Vues */
+.vues-link {
+  position: relative;
+  top: 212px;
+  left: 128px;
+}
+
+.card-vues {
+  position: relative;
+  top: -30px;
+  left: 40px;
+}
+
+.circle2 {
+  color:turquoise;
+}
+
+.arrows {
+  position: relative;
+  top: -5.6px;
+  left: -25.6px;
+  color: white;
+}
+
+/* Utilisateurs inscrits */
+.inscrits-link {
+  position: relative;
+  top: 192px;
+}
+
+.card-inscrits {
+  position: relative;
+  top: -33.6px;
+  left: 40px;
+  font-size: 10.4px;
+}
+
+.circle3 {
+  color:rgb(252, 200, 105);
+}
+
+.fa-user-plus {
+  position: relative;
+  top: -6.4px;
+  left: -28px;
+  color: white;
+}
+
+/* Partages */
+.partages-link {
+  position: relative;
+  top: 109.6px;
+  left: 128px;
+}
+
+.card-partages {
+  position: relative;
+  top: -30.4px;
+  left: 40px;
+}
+
+.circle4 {
+  color:darkslateblue;
+}
+
+.fa-comment-dots {
+  position: relative;
+  top: -5.6px;
+  left: -28px;
+  color: white;
+}
+
+/* Posts prévus */
+.posts-link {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card-posts {
+  position: relative;
+  top: 70px;
+  text-align: center;
+}
+
+.circle5 {
+  position: relative;
+  left: 11px;
+  color:turquoise;
+}
+
+.calendar-icon {
+  position: relative;
+  top: -12.5px;
+  left: -27.5px;
+  color: white; 
+}
+
+/* Nouveaux posts */
+.new-posts-link {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.card-new-posts {
+  position: relative;
+  top: 58px;
+  text-align: center;
+}
+
+.circle6 {
+  position: relative;
+  left: 11px;
+  color:turquoise;
+}
+
+.fa-plus {
+  position: relative;
+  top: -12.5px;
+  left: -27.5px;
+  color: white; 
+}
+
+.row2 {
+  margin-top: -200px;
+}
+
+.audio-card {
+  height: 200px;
+  width: 240px;
+}
+
+.post-card, .new-post-card {
+  height: 200px;
+  width: 152px;
+}
+
+/* Cartes statistiques */
+.stats-card {
+  border-radius: 16px;
+  height: 144px;
+  width: 416px;
+  margin: 0 80px 80px 0;
+}
+
