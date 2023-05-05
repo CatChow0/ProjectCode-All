@@ -10,6 +10,7 @@ int main () {
         char letter = 97;
         printf("%c ",letter+i);
     }
+
     printf("\na l'envers\n");
     for(int i = 0; i < 26; i++) {
         char letter = 122;
@@ -77,6 +78,6 @@ int main () {
     printf("\nTruc 3\n");
 
     
-    
+
     return 0;
 }
