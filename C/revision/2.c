@@ -79,6 +79,11 @@
 
 void createArray(){
 
+    int col,lig,size;
+
+    printf("nb col et nb lig : ");
+    scanf("%d %d", &col,&lig);
+
     
 
     return;
